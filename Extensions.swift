@@ -15,3 +15,18 @@ extension UIViewController {
      sharelink(title: "", link: "")
      */
 }
+
+// make Phone Call
+extension UIViewController {
+    func makePhoneCall(phoneNumber: String) {
+        if let phoneURL = NSURL(string: ("tel://" + phoneNumber)) {
+            DispatchQueue.main.async {
+                UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    /*
+     // Using
+     makePhoneCall(phoneNumber: "12345")
+     */
+}
